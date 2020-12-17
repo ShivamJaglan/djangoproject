@@ -48,12 +48,13 @@ class HelloApiView(APIView):
 
 
     def delete(self, request, pk=None):
-        """deletes an object"""
+        """deletes an ob  ject"""
 
         return Response({'method': 'delete'})
 class HelloViewSet(viewsets.ViewSet):
     """test api viewset"""
 
+    serializer_class= serializers.HelloSerializer
 
     def list(self, request):
 
@@ -65,3 +66,7 @@ class HelloViewSet(viewsets.ViewSet):
         ]
 
         return Response({'message':'Hello!' , 'a_viewset': a_viewset})
+
+
+    def create(Self,request):
+        """create  anew hello messsage"""
